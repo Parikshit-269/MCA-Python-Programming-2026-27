@@ -1,12 +1,14 @@
-units = int(input("Enter electricity units consumed: "))
-
-if units <= 100:
-    bill = units * 5
-elif units <= 200:
-    bill = (100 * 5) + ((units - 100) * 7)
-elif units <= 300:
-    bill = (100 * 5) + (100 * 7) + ((units - 200) * 10)
+basic = float(input("Enter basic salary: "))
+da = basic * 20 / 100
+hra = basic * 10 / 100
+gross = basic + da + hra
+if gross > 50000:
+    tax = gross * 10 / 100
 else:
-    bill = (100 * 5) + (100 * 7) + (100 * 10) + ((units - 300) * 12)
-
-print("Electricity Bill =", bill)
+    tax = gross * 5 / 100
+net = gross - tax
+print("DA:", da)
+print("HRA:", hra)
+print("Gross salary:", gross)
+print("Tax:", tax)
+print("Net salary:", net)
