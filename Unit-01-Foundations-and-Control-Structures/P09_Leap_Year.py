@@ -1,12 +1,6 @@
-n = int(input("Enter an integer: "))
-if n == 0:
-    print("Zero")
+year = int(input("Enter a year: "))
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    print("Leap year")
 else:
-    if n > 0:
-        print("Positive")
-    else:
-        print("Negative")
-    if n % 2 == 0:
-        print("Even")
-    else:
-        print("Odd")
+    print("Not a leap year")
+ 
